@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Never create, edit or delete anything inside `public/i8ugbeqri/` (user uploads it via GitHub); link to it with plain `<a href>` and never add service workers, PWA plugins, analytics or catch-all rewrites that could shadow it.

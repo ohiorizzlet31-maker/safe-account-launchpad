@@ -1,23 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Launcher" },
+      { name: "description", content: "Please use an ALT account. Never sign in with your main account." },
+      { property: "og:title", content: "Launcher" },
+      { property: "og:description", content: "Please use an ALT account. Never sign in with your main account." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="flex min-h-screen items-center justify-center bg-background px-6">
+      <div className="flex max-w-md flex-col items-center gap-8 text-center">
+        <p className="text-xl font-medium leading-relaxed text-foreground">
+          Please use an ALT account. Never sign in with your main account.
+        </p>
+        {/* Plain anchor: the launcher is a static file, not an app page, so it needs a full page load. */}
+        <a
+          href="/i8ugbeqri/launcher/index.html"
+          className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Launch
+        </a>
+      </div>
+    </main>
   );
 }
