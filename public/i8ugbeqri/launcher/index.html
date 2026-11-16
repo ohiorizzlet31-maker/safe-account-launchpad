@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head><script>window.__WB=location.href.slice(0,location.href.indexOf("/i8ugbeqri/")+11)</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LucideBlox</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/loading/BuilderSans-Regular.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="../assets/loading/BuilderSans-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preconnect" href="https://tr.rbxcdn.com">
+  <script>
+    try {
+      var theme = localStorage.getItem('webblox.launcher.theme');
+      var mode = localStorage.getItem('webblox.launcher.themeMode');
+      var legacy = { system: 'system', dark: 'dark', light: 'light', midnight: 'dark', ocean: 'dark', grape: 'dark', emerald: 'dark', rose: 'dark' };
+      if (legacy[theme]) {
+        mode = legacy[theme];
+        theme = 'Default';
+        localStorage.setItem('webblox.launcher.theme', theme);
+        localStorage.setItem('webblox.launcher.themeMode', mode);
+      }
+      if (theme === 'xbox') document.documentElement.dataset.theme = theme;
+      else {
+        if (mode !== 'system' && mode !== 'light') mode = mode === 'dark' ? mode : 'dark';
+        if (mode === 'system') mode = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (theme === 'Halloween2026') mode = 'dark';
+        document.documentElement.dataset.theme = (theme || 'Default') + '-' + mode;
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="app-themes.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="xbox.css">
+  <link rel="modulepreload" href="js/app.js">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="index.html#/" aria-label="LucideBlox home">
+      <svg viewBox="157 157 710 710" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M307.201 157.281L157.281 716.799L716.799 866.719L866.719 307.201L307.201 157.281ZM569.242 611.157L412.893 569.242L454.807 412.893L611.219 454.807L569.242 611.157Z"/></svg>
+    </a>
+    <form class="find" id="find" role="search">
+      <span class="find-icon" data-icon="magnifying-glass"></span>
+      <input id="query" type="search" placeholder="Search games, people and communities" autocomplete="off" spellcheck="false" role="combobox" aria-label="Search" aria-expanded="false" aria-controls="suggestions" aria-autocomplete="list">
+      <ul class="suggestions" id="suggestions" role="listbox" aria-label="Search suggestions" hidden></ul>
+    </form>
+    <div class="me" id="me"></div>
+  </header>
+  <nav class="rail" id="rail" aria-label="Main"></nav>
+  <div class="layout" id="layout">
+    <main class="content" id="content"></main>
+    <aside class="friends-column" id="friends" aria-label="Friends online" hidden></aside>
+  </div>
+  <div class="toasts" id="toasts" popover="manual"></div>
+</body>
+</html>
